@@ -22,7 +22,7 @@ function App() {
           <Route path='/destination' element={<Destination place={'moon'} />}>
             <Route path=':place' element={<Destination />} />
           </Route>
-          <Route path='/crew' element={<Crew person={'douglas'} />}>
+          <Route path='/crew' element={<Crew person={'douglas-hurley'} />}>
             <Route path=':crewName' element={<Crew />} />
           </Route>
           <Route
