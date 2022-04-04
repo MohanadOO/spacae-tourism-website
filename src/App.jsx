@@ -20,10 +20,10 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/destination' element={<Destination place={'moon'} />}>
-            <Route path=':place' element={<Destination />} />
+            <Route path=':place' />
           </Route>
           <Route path='/crew' element={<Crew person={'douglas-hurley'} />}>
-            <Route path=':crewName' element={<Crew />} />
+            <Route path=':crewName' />
           </Route>
           <Route
             path='/technology'
