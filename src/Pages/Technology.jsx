@@ -26,14 +26,14 @@ function Technology(props) {
       />
       <img
         src='../technology/background-technology-mobile.jpg'
-        className='bg-cover min-h-screen  w-screen block sm:hidden'
+        className='bg-cover min-h-screen h-full  w-full block sm:hidden'
       />
-      <div className='absolute top-[100px] sm:top-[150px] lg:top-[212px] left-0 lg:left-[166px] z-[3]'>
+      <div className='absolute top-[100px] sm:top-[150px] lg:top-[212px] lg:left-[166px] z-[3]'>
         <h5 className='text-primary-white uppercase text-[16px] sm:text-[20px] lg:text-[28px] sm:ml-8 sm:mb-[50px] mb-[32px] text-center sm:text-left '>
           <span className=' opacity-25'>03</span> Space Launch 101
         </h5>
         <div className='flex flex-col lg:flex-row  mt-[50px] lg:gap-[80px] gap-10 items-center lg:text-left text-center '>
-          <div className='block lg:hidden w-full '>
+          <div className='block lg:hidden'>
             <img
               src={`../technology/image-${
                 launch || 'launch-vehicle'

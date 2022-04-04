@@ -18,15 +18,15 @@ function Destination(props) {
     <>
       <img
         src='../destination/background-destination-desktop.jpg'
-        className='bg-cover h-screen w-screen absolute overflow-hidden top-0 hidden lg:block'
+        className='bg-cover w-full  h-screen scale-110  max-w-screen min-h-screen absolute overflow-hidden top-0 hidden lg:block'
       />
       <img
         src='../destination/background-destination-tablet.jpg'
-        className='bg-cover w-screen absolute overflow-hidden top-0 lg:hidden sm:block hidden'
+        className='bg-cover  w-screen absolute overflow-hidden top-0 lg:hidden sm:block hidden'
       />
       <img
         src='../destination/background-destination-mobile.jpg'
-        className='bg-cover h-full w-screen  block sm:hidden'
+        className='bg-cover h-screen w-screen  block sm:hidden'
       />
       <div className='absolute sm:top-[150px] top-[100px] lg:top-[212px] left-0 lg:left-[166px]'>
         <h5 className='text-primary-white uppercase text-[16px] sm:text-[20px] lg:text-[28px] sm:ml-8 sm:mb-[50px] mb-[32px] text-center sm:text-left '>
