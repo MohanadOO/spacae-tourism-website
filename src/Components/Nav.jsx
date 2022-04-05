@@ -1,11 +1,31 @@
 import { useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 function Nav() {
   const [menu, setMenu] = useState(false)
 
+  //Framer Motion Animations Variants
+  const lineAnimation = {
+    initial: {
+      scale: 0,
+      x: 50,
+    },
+    animate: {
+      scale: 1,
+      transition: { duration: 1, delay: 2 },
+    },
+  }
+
   return (
-    <nav className='lg:mt-10 lg:ml-14 top-2 md:top-0 w-full fixed z-[20]'>
+    <motion.nav
+      initial={{ y: -200 }}
+      animate={{
+        y: 0,
+        transition: { duration: 1, delay: 1 },
+      }}
+      className='lg:mt-10 lg:ml-14 top-2 md:top-0 w-full fixed z-[20]'
+    >
       <ul className='flex items-center font-BarlowCondensed lg:w-screen justify-between'>
         <li>
           <Link to='./'>
@@ -15,7 +35,12 @@ function Nav() {
             />
           </Link>
         </li>
-        <hr className='border-primary-white w-[473px] max-w-[473px] ml-16 lg:block hidden' />
+        <motion.hr
+          variants={lineAnimation}
+          initial='initial'
+          animate='animate'
+          className='border-[rgba(255,255,255,0.4)] w-[473px] max-w-[473px] ml-10 lg:block hidden z-[20]'
+        />
         {!menu ? (
           <div className='cursor-pointer' onClick={() => setMenu(true)}>
             <img
@@ -34,18 +59,18 @@ function Nav() {
             />
             <div className='fixed bottom-0  sm:hidden backdrop-blur-[81px] w-[254px] h-full bg-[rgba(255,255,255,0.04)] right-0'>
               <div className='flex flex-col gap-[32px] mx-20 absolute top-48 '>
-                <Link to='/'>
+                <Link to='/' onClick={() => setMenu(false)}>
                   <span className='mr-3 font-bold z-[3]'>00</span>
                   Home
                 </Link>
-                <Link to='/destination'>
+                <Link to='/destination' onClick={() => setMenu(false)}>
                   <span className='mr-3 font-bold z-[3]'>01</span>
                   Destination
                 </Link>
-                <Link to='/crew'>
+                <Link to='/crew' onClick={() => setMenu(false)}>
                   <span className='mr-3 font-bold z-[3]'>02</span>Crew
                 </Link>
-                <Link to='/technology'>
+                <Link to='/technology' onClick={() => setMenu(false)}>
                   <span className='mr-3 font-bold z-[3]'>03</span>
                   Technology
                 </Link>
@@ -53,6 +78,7 @@ function Nav() {
             </div>
           </>
         )}
+        {/* Tablets & Desktop Navigation bar */}
         <div className='sm:flex hidden relative bg-[rgba(255,255,255,0.04)] backdrop-blur-[81px] lg:py-12 py-10 lg:px-32 px-12 lg:gap-12 gap-9 ml-auto lg:flex-1 tracking-[2.7px] leading-[19.2px] uppercase'>
           <NavLink className='nav-hover' to='/'>
             <span className='mr-3 font-bold lg:inline hidden '>00</span>
@@ -72,7 +98,7 @@ function Nav() {
           </NavLink>
         </div>
       </ul>
-    </nav>
+    </motion.nav>
   )
 }
 

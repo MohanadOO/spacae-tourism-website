@@ -1,7 +1,7 @@
-import { filterProps } from 'framer-motion'
 import React from 'react'
 import { NavLink, useParams } from 'react-router-dom'
 import dataJSON from './data.json'
+import { motion } from 'framer-motion'
 
 function Technology(props) {
   const { technology } = dataJSON
@@ -14,8 +14,32 @@ function Technology(props) {
     device = technology
   }
 
+  //Framer Motion Animations Variants
+  const pageTransition = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1, transition: { duration: 0.2, delay: 0.1 } },
+    exit: { opacity: 0, transition: { duration: 0.1 } },
+  }
+
+  const imageAnimation = {
+    initial: {
+      opacity: 0,
+      scale: 1.2,
+    },
+    animate: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.8, delay: 0.1 },
+    },
+  }
+
   return (
-    <>
+    <motion.div
+      variants={pageTransition}
+      initial='initial'
+      animate='animate'
+      exit='exit'
+    >
       <img
         src='../technology/background-technology-desktop.jpg'
         className='bg-cover h-screen w-screen hidden lg:block'
@@ -34,7 +58,10 @@ function Technology(props) {
         </h5>
         <div className='flex flex-col lg:flex-row  mt-[50px] lg:gap-[80px] gap-10 items-center lg:text-left text-center '>
           <div className='block lg:hidden'>
-            <img
+            <motion.img
+              variants={imageAnimation}
+              initial='initial'
+              animate='animate'
               src={`../technology/image-${
                 launch || 'launch-vehicle'
               }-landscape.jpg`}
@@ -88,7 +115,10 @@ function Technology(props) {
             </p>
           </div>
           <div className='ml-14 2xl:ml-32 hidden lg:block'>
-            <img
+            <motion.img
+              variants={imageAnimation}
+              initial='initial'
+              animate='animate'
               src={`../technology/image-${
                 launch || 'launch-vehicle'
               }-portrait.jpg`}
@@ -97,7 +127,7 @@ function Technology(props) {
           </div>
         </div>
       </div>
-    </>
+    </motion.div>
   )
 }
 
