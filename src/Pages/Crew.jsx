@@ -48,52 +48,51 @@ function Crew(props) {
       initial='initial'
       animate='animate'
       exit='exit'
-      className='bg-red-900'
     >
       <img
         src='../crew/background-crew-desktop.jpg'
-        className='bg-cover h-full  sm:h-screen w-screen hidden lg:block'
+        className='hidden h-full  w-screen bg-cover sm:h-screen lg:block'
       />
       <img
         src='../crew/background-crew-tablet.jpg'
-        className='bg-cover h-screen w-screen  sm:block lg:hidden hidden'
+        className='hidden h-screen w-screen  bg-cover sm:block lg:hidden'
       />
       <img
         src='../crew/background-crew-mobile.jpg'
-        className='bg-cover min-h-screen h-full w-screen   block sm:hidden'
+        className='block h-full min-h-screen w-screen   bg-cover sm:hidden'
       />
       <motion.img
         variants={crewImageAnimation}
         initial='initial'
         animate='animate'
-        className='bg-cover absolute z-[0] bottom-0  lg:right-[137px] max-w-[300px]  lg:max-w-full  right-[200px] hidden sm:block'
+        className='absolute bottom-0 left-[50%] right-[50%] z-[0] hidden  max-w-[300px]  translate-x-[-50%] bg-cover sm:block  lg:left-auto  lg:right-[137px] lg:max-w-full lg:translate-x-0'
         src={`../crew/image-${crewName || props.person}.png`}
       />
-      <div className='absolute  sm:top-[150px] top-[100px] lg:top-[212px] left-0 lg:left-[166px] sm:w-screen lg:w-auto md:min-w-screen '>
-        <h5 className='text-primary-white uppercase text-[16px] sm:text-[20px] lg:text-[28px] sm:ml-8 sm:mb-[50px] mb-[32px] text-center sm:text-left '>
+      <div className='md:min-w-screen absolute top-[100px] sm:top-[150px] sm:w-screen lg:top-[212px] lg:left-[166px] lg:w-auto '>
+        <h5 className='mb-[32px] text-center text-[16px] uppercase text-primary-white sm:ml-8 sm:mb-[50px] sm:text-left sm:text-[20px] lg:text-[28px] '>
           <span className=' opacity-25'>02</span> Meet Your Crew
         </h5>
-        <div className=' px-5 mt-0 flex flex-col items-center lg:items-start text-center lg:text-left  w-full '>
+        <div className=' mt-0 flex w-full flex-col items-center px-5 text-center lg:items-start  lg:text-left '>
           <motion.img
             variants={crewImageAnimation}
             initial='initial'
             animate='animate'
-            className='bg-cover z-[0] top-100  lg:right-[137px] max-w-[220px]  lg:max-w-full right-[200px] block sm:hidden'
+            className='top-100 right-[200px] z-[0]  block max-w-[220px]  bg-cover sm:hidden lg:right-[137px] lg:max-w-full'
             src={`../crew/image-${crewName || props.person}.png`}
           />
-          <hr className='w-full border-primary-white block sm:hidden' />
-          <ul className='flex relative uppercase lg:gap-[35px] gap-[16px] lg:mt-[90px] mt-[40px] text-primary-white sm:hidden z-[3]'>
+          <hr className='block w-full border-primary-white sm:hidden' />
+          <ul className='relative z-[3] mt-[40px] flex gap-[16px] uppercase text-primary-white sm:hidden lg:mt-[90px] lg:gap-[35px]'>
             <NavLink
               to='./douglas-hurley'
               className={({ isActive }) =>
-                'lg:w-4 lg:h-4 w-[10px] h-[10px] rounded-full cursor-pointer hover:bg-[rgba(255,255,255,0.5)]' +
+                'h-[10px] w-[10px] cursor-pointer rounded-full hover:bg-[rgba(255,255,255,0.5)] lg:h-4 lg:w-4' +
                 (isActive ? '  bg-white' : ' bg-[rgba(255,255,255,0.3)]')
               }
             ></NavLink>
             <NavLink
               to='./mark-shuttleworth'
               className={({ isActive }) =>
-                'lg:w-4 lg:h-4 w-[10px] h-[10px] rounded-full  cursor-pointer hover:bg-[rgba(255,255,255,0.5)]' +
+                'h-[10px] w-[10px] cursor-pointer rounded-full hover:bg-[rgba(255,255,255,0.5)]  lg:h-4 lg:w-4' +
                 (crewName == undefined || isActive
                   ? ' bg-white'
                   : ' bg-[rgba(255,255,255,0.3)]')
@@ -102,37 +101,37 @@ function Crew(props) {
             <NavLink
               to='./victor-glover'
               className={({ isActive }) =>
-                'lg:w-4 lg:h-4 w-[10px] h-[10px] rounded-full  cursor-pointer hover:bg-[rgba(255,255,255,0.5)]' +
+                'h-[10px] w-[10px] cursor-pointer rounded-full hover:bg-[rgba(255,255,255,0.5)]  lg:h-4 lg:w-4' +
                 (isActive ? '  bg-white' : ' bg-[rgba(255,255,255,0.3)]')
               }
             ></NavLink>
             <NavLink
               to='./anousheh-ansari'
               className={({ isActive }) =>
-                'lg:w-4 lg:h-4 w-[10px] h-[10px] rounded-full  cursor-pointer hover:bg-[rgba(255,255,255,0.5)]' +
+                'h-[10px] w-[10px] cursor-pointer rounded-full hover:bg-[rgba(255,255,255,0.5)]  lg:h-4 lg:w-4' +
                 (isActive ? '  bg-white' : ' bg-[rgba(255,255,255,0.3)]')
               }
             ></NavLink>
           </ul>
-          <h4 className='text-base sm:text-2xl lg:text-4xl uppercase opacity-50 lg:mt-[130px] mt-[60px] sm:mb-5'>
+          <h4 className='mt-[60px] text-base uppercase opacity-50 sm:mb-5 sm:text-2xl lg:mt-[130px] lg:text-4xl'>
             {crewMember[0].role}
           </h4>
           <motion.h3
             variants={crewNameAnimation}
             initial='initial'
             animate='animate'
-            className='uppercase lg:mt-9 lg:mb-5 mt-2 mb-4 text-2xl sm:text-[40px] lg:text-[56px] lg:leading-10 '
+            className='mt-2 mb-4 text-2xl uppercase sm:text-[40px] lg:mt-9 lg:mb-5 lg:text-[56px] lg:leading-10 '
           >
             {crewMember[0].name}
           </motion.h3>
-          <p className='text-primary-white  sm:px-0 max-w-[444px] text-[15px] sm:text-[16px] lg:text-[18px] lg:leading-9 lg:mt-7 '>
+          <p className='max-w-[444px]  text-[15px] text-primary-white sm:px-0 sm:text-[16px] lg:mt-7 lg:text-[18px] lg:leading-9 '>
             {crewMember[0].bio}
           </p>
-          <ul className='sm:flex  relative uppercase lg:gap-[35px] gap-[16px] lg:mt-[90px] mt-[40px] text-primary-white hidden z-[3]'>
+          <ul className='relative  z-[3] mt-[40px] hidden gap-[16px] uppercase text-primary-white sm:flex lg:mt-[90px] lg:gap-[35px]'>
             <NavLink
               to='./douglas-hurley'
               className={({ isActive }) =>
-                'lg:w-4 lg:h-4 w-[10px] h-[10px] hover:bg-[rgba(255,255,255,0.5)] rounded-full cursor-pointer' +
+                'h-[10px] w-[10px] cursor-pointer rounded-full hover:bg-[rgba(255,255,255,0.5)] lg:h-4 lg:w-4' +
                 (crewName === undefined || isActive
                   ? ' bg-white'
                   : ' bg-[rgba(255,255,255,0.2)]')
@@ -141,21 +140,21 @@ function Crew(props) {
             <NavLink
               to='./mark-shuttleworth'
               className={({ isActive }) =>
-                'lg:w-4 lg:h-4 w-[10px] h-[10px] hover:bg-[rgba(255,255,255,0.5)] rounded-full  cursor-pointer' +
+                'h-[10px] w-[10px] cursor-pointer rounded-full hover:bg-[rgba(255,255,255,0.5)] lg:h-4  lg:w-4' +
                 (isActive ? ' bg-white' : ' bg-[rgba(255,255,255,0.2)]')
               }
             ></NavLink>
             <NavLink
               to='./victor-glover'
               className={({ isActive }) =>
-                'lg:w-4 lg:h-4 w-[10px] h-[10px] hover:bg-[rgba(255,255,255,0.5)] rounded-full  cursor-pointer' +
+                'h-[10px] w-[10px] cursor-pointer rounded-full hover:bg-[rgba(255,255,255,0.5)] lg:h-4  lg:w-4' +
                 (isActive ? ' bg-white' : ' bg-[rgba(255,255,255,0.2)]')
               }
             ></NavLink>
             <NavLink
               to='./anousheh-ansari'
               className={({ isActive }) =>
-                'lg:w-4 lg:h-4 w-[10px] h-[10px] hover:bg-[rgba(255,255,255,0.5)] rounded-full  cursor-pointer' +
+                'h-[10px] w-[10px] cursor-pointer rounded-full hover:bg-[rgba(255,255,255,0.5)] lg:h-4  lg:w-4' +
                 (isActive ? ' bg-white' : ' bg-[rgba(255,255,255,0.2)]')
               }
             ></NavLink>

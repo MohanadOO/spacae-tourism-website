@@ -63,22 +63,22 @@ function Destination(props) {
     >
       <img
         src='../destination/background-destination-desktop.jpg'
-        className='bg-cover w-full  h-screen scale-110  max-w-screen min-h-screen absolute overflow-hidden top-0 hidden lg:block'
+        className='max-w-screen absolute   hidden  h-screen min-h-screen w-full scale-110 overflow-hidden bg-cover lg:block'
       />
       <img
         src='../destination/background-destination-tablet.jpg'
-        className='bg-cover  w-screen absolute overflow-hidden top-0 lg:hidden sm:block hidden'
+        className='absolute  hidden w-screen overflow-hidden bg-cover sm:block lg:hidden'
       />
       <img
         src='../destination/background-destination-mobile.jpg'
-        className='bg-cover h-screen w-screen scale-110 block sm:hidden'
+        className='block h-screen w-screen scale-110 bg-cover sm:hidden'
       />
-      <div className='absolute sm:top-[150px] top-[100px] lg:top-[212px] left-0 lg:left-[166px]'>
-        <h5 className='text-primary-white uppercase text-[16px] sm:text-[20px] lg:text-[28px] sm:ml-8 sm:mb-[50px] mb-[32px] text-center sm:text-left '>
+      <div className='absolute top-[100px] left-0 sm:top-[150px] lg:top-[212px] lg:left-[166px]'>
+        <h5 className='mb-[32px] text-center text-[16px] uppercase text-primary-white sm:ml-8 sm:mb-[50px] sm:text-left sm:text-[20px] lg:text-[28px] '>
           <span className=' opacity-25'>01</span> Pick Your Destination
         </h5>
-        <div className='lg:mt-[64px] px-[24px] sm:px-[0] flex flex-col lg:flex-row 2xl:gap-[400px] lg:gap-[187px] gap-0 items-center text-center lg:text-left w-screen lg:w-full '>
-          <div className='sm:max-w-[300px] sm:min-h-[300px]  max-w-[170px] min-h-[100px] lg:max-w-full lg:min-h-full'>
+        <div className='flex w-screen flex-col items-center gap-0 px-[24px] text-center sm:px-[0] lg:mt-[64px] lg:w-full lg:flex-row lg:gap-[187px] lg:text-left 2xl:gap-[400px] '>
+          <div className='min-h-[100px] max-w-[170px]  sm:min-h-[300px] sm:max-w-[300px] lg:min-h-full lg:max-w-full'>
             <motion.img
               variants={rotateImageAnimation}
               initial='initial'
@@ -86,12 +86,12 @@ function Destination(props) {
               src={`../destination/image-${place || props.place}.png`}
             />
           </div>
-          <div className='lg:max-w-[445px] lg:min-h-[472px] max-w-[573px] min-h-[300px] mt-7 sm:mt-14 lg:mt-0 '>
-            <ul className='flex relative uppercase gap-[35px] justify-center lg:justify-start text-primary-white sm:text-[16px] text-[14px] '>
+          <div className='mt-7 min-h-[300px] max-w-[573px] sm:mt-14 lg:mt-0 lg:min-h-[472px] lg:max-w-[445px] '>
+            <ul className='relative flex justify-center gap-[35px] text-[14px] uppercase text-primary-white sm:text-[16px] lg:justify-start '>
               <NavLink
                 to='./moon'
                 className={({ isActive }) =>
-                  'cursor-pointer hover:text-white tabs-hover' +
+                  'tabs-hover cursor-pointer hover:text-white' +
                   (place === undefined || isActive
                     ? ' tabs-active text-white'
                     : ' ')
@@ -102,7 +102,7 @@ function Destination(props) {
               <NavLink
                 to='./mars'
                 className={({ isActive }) =>
-                  'cursor-pointer hover:text-white tabs-hover' +
+                  'tabs-hover cursor-pointer hover:text-white' +
                   (isActive ? ' tabs-active text-white' : '')
                 }
               >
@@ -111,7 +111,7 @@ function Destination(props) {
               <NavLink
                 to='./europa'
                 className={({ isActive }) =>
-                  'cursor-pointer hover:text-white tabs-hover' +
+                  'tabs-hover cursor-pointer hover:text-white' +
                   (isActive ? ' tabs-active text-white' : '')
                 }
               >
@@ -120,7 +120,7 @@ function Destination(props) {
               <NavLink
                 to='./titan'
                 className={({ isActive }) =>
-                  'cursor-pointer hover:text-white tabs-hover' +
+                  'tabs-hover cursor-pointer hover:text-white' +
                   (isActive ? ' tabs-active text-white' : '')
                 }
               >
@@ -131,7 +131,7 @@ function Destination(props) {
               variants={planetNameAnimation}
               initial='initial'
               animate='animate'
-              className='uppercase  sm:mt-9 sm:mb-4 text-[56px] sm:text-[80px] lg:text-[100px]'
+              className='text-[56px]  uppercase sm:mt-9 sm:mb-4 sm:text-[80px] lg:text-[100px]'
             >
               {place || props.place}
             </motion.h2>
@@ -139,20 +139,20 @@ function Destination(props) {
               variants={planetTextAnimation}
               initial='initial'
               animate='animate'
-              className='text-primary-white leading-[25px] sm:leading-[28px] lg:leading-[38px] text-[14px] sm:text-[16px] lg:text-[18px]'
+              className='text-[14px] leading-[25px] text-primary-white sm:text-[16px] sm:leading-[28px] lg:text-[18px] lg:leading-[38px]'
             >
               {planet[0].description}
             </motion.p>
-            <hr className='border-[#383B4B] mb-6 mt-14' />
-            <div className='flex sm:flex-row flex-col justify-center items-center uppercase lg:justify-start sm:gap-[79px] gap-[32px]'>
+            <hr className='mb-6 mt-14 border-[#383B4B]' />
+            <div className='flex flex-col items-center justify-center gap-[32px] uppercase sm:flex-row sm:gap-[79px] lg:justify-start'>
               <div>
-                <p className='text-primary-white text-[14px] text-base'>
+                <p className='text-[14px] text-base text-primary-white'>
                   Avg. distance
                 </p>
                 <h4 className='w-52 text-2xl'>{planet[0].distance}</h4>
               </div>
               <div>
-                <p className='text-primary-white text-[14px]'>
+                <p className='text-[14px] text-primary-white'>
                   Est. travel time
                 </p>
                 <h4 className='w-52 text-2xl '>{planet[0].travel}</h4>

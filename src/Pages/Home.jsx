@@ -34,31 +34,31 @@ function Home() {
     >
       <img
         src='./home/background-home-desktop.jpg'
-        className='bg-cover h-screen w-screen absolute overflow-hidden top-0 hidden lg:block'
+        className='absolute top-0 hidden h-screen w-screen overflow-hidden bg-cover lg:block'
       />
       <img
         src='./home/background-home-tablet.jpg'
-        className='bg-cover min-h-screen  w-screen absolute overflow-hidden top-0 sm:block lg:hidden hidden'
+        className='absolute top-0  hidden min-h-screen w-screen overflow-hidden bg-cover sm:block lg:hidden'
       />
       <img
         src='./home/background-home-mobile.jpg'
-        className='bg-cover min-h-screen  w-screen absolute overflow-hidden top-0 block sm:hidden'
+        className='absolute top-0  block min-h-screen w-screen overflow-hidden bg-cover sm:hidden'
       />
-      <div className='flex flex-col lg:flex-row w-[80vw] relative lg:top-[387px] top-[120px] sm:top-[200px] lg:ml-[165px] mx-auto justify-between items-center text-center lg:text-left'>
-        <div className='max-w-[450px] min-h-[382px] overflow-hidden'>
+      <div className='relative top-[120px] mx-auto flex w-[80vw] flex-col items-center justify-between text-center sm:top-[200px] lg:top-[387px] lg:ml-[165px] lg:flex-row lg:text-left'>
+        <div className='min-h-[382px] max-w-[450px] overflow-hidden'>
           <motion.h5
             animate={{ x: [1000, 0], transition: { delay: 0.5, duration: 2 } }}
-            className=' text-base sm:text-2xl text-primary-white uppercase'
+            className=' text-base uppercase text-primary-white sm:text-2xl'
           >
             So, you want to travel to
           </motion.h5>
-          <h1 className='uppercase text-[80px] sm:text-[150px]'>Space</h1>
+          <h1 className='text-[80px] uppercase sm:text-[150px]'>Space</h1>
           <motion.p
             variants={textAnimation}
             initial='initial'
             animate='animate'
             exit='exit'
-            className='font-Barlow text-primary-white text-[15px] sm:text-base lg:text-[18px] lg:leading-[32px]'
+            className='font-Barlow text-[15px] text-primary-white sm:text-base lg:text-[18px] lg:leading-[32px]'
           >
             Let’s face it; if you want to go to space, you might as well
             genuinely go to outer space and not hover kind of on the edge of it.
@@ -70,16 +70,16 @@ function Home() {
           variants={exploreBtnAnimation}
           initial='initial'
           animate='animate'
-          className='hover:bg-[rgba(255,255,255,0.2)] transition-colors duration-200 ease-in rounded-full mt-0 lg:mt-5 lg:mr-[165px] mr-0 lg:min-w-[374px] lg:h-[374px] 
-          sm:min-w-[342px] sm:h-[342px] min-w-[250px] h-[250px] flex items-center justify-center '
+          className='mt-0 mr-0 flex h-[250px] min-w-[250px] items-center justify-center rounded-full transition-colors duration-200 ease-in 
+          hover:bg-[rgba(255,255,255,0.2)] sm:h-[342px] sm:min-w-[342px] lg:mt-5 lg:mr-[165px] lg:h-[374px] lg:min-w-[374px] '
         >
           <Link
             to='./destination'
-            className='uppercase  bg-white text-primary-black 
-          rounded-full flex items-center justify-center cursor-pointer lg:min-w-[274px] lg:h-[274px] 
-          sm:min-w-[242px] sm:h-[242px] min-w-[150px] h-[150px] z-10'
+            className='z-10  flex h-[150px] 
+          min-w-[150px] cursor-pointer items-center justify-center rounded-full bg-white uppercase 
+          text-primary-black sm:h-[242px] sm:min-w-[242px] lg:h-[274px] lg:min-w-[274px]'
           >
-            <h4 className='sm:text-[32px] text-[20px]'>Explore</h4>
+            <h4 className='text-[20px] sm:text-[32px]'>Explore</h4>
           </Link>
         </motion.div>
       </div>
